@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+a{
+    text-decoration: none;
+}
+.rotation {
+    animation: rotation 10s infinite linear;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 200;
+    background: rgba(254, 248, 244, 0.95);
+    backdrop-filter: blur(4px);
+    grid-area: header;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 153px;
+    align-items: center;
+}
+header .navDesktop {
+    display: flex;
+}
+header .navDesktop ul {
+    padding: 0%;
+    margin: 0%;
+    gap: 2rem;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+header .navDesktop ul li {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-decoration-line: none;
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    transition: all 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}
+header .navDesktop ul li div {
+    width: 0.1%;
+    height: 6px;
+    background-color: transparent;
+    position: relative;
+    z-index: 3;
+    transition: all 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}
+header .navDesktop ul li a {
+    position: relative;
+    z-index: 1;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    padding: 6px 20px 6px 20px;
+    color: #494949;
+    transition: all 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}
+header .navDesktop ul li a:focus {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 800;
+    color: #494949;
+}
+header .navDesktop ul li a:active {
+    color: #494949;
+    font-weight: 800;
+}
+header .navDesktop ul li:hover a {
+    background-color: white;
+    animation-name: hoverNavDesktopContainer;
+    animation-duration: 0.5s;
+    box-shadow: 0px 8px 27px -8px rgba(0, 0, 0, 0.1);
+}
+@keyframes hoverNavDesktopContainer {
+    0% {
+        transform: translate(0px, 0px);
+        opacity: 1;
+   }
+    50% {
+        transform: translate(0px, 5px);
+   }
+    100% {
+        transform: translate(0px, 0px);
+   }
+}
+header .navDesktop ul li:hover div {
+    width: 100%;
+    height: 6px;
+    background-color: #e5e7b3;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    animation-name: hoverNavDesktop;
+    animation-timing-function: cubic-bezier(0.91, -0.56, 0.37, 1.65);
+    animation-duration: 0.5s;
+}
+@keyframes hoverNavDesktop {
+    0% {
+        transform: scale(0.1);
+        transform: translate(0px, -10px);
+        opacity: 0;
+   }
+}
+header .logo-variant1 {
+    position: relative;
+    margin: 0px 16px 0px 70px;
+}
+header .logo-variant1 .headercupshop {
+    position: absolute;
+    top: 42px;
+    left: -20px;
+}
+header .navMobile {
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    margin: 0px 80px 0px 0px;
+}
+header .navMobile .navMobileShower {
+    border: red solid 2px;
+}
+header .navMobile .navMobilePill {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #6e61ff;
+    width: 140px;
+    height: 30px;
+    padding-right: 10px;
+    border-radius: 16px 16px 0px 0px;
+    transition: all 0.5s;
+}
+header .navMobile .navMobilePill img {
+    width: 20px;
+}
+header .navMobile .navMobilePill .burgerAbrir {
+    position: absolute;
+    top: 5px;
+    visibility: hidden;
+    transform: scale(0);
+    animation-timing-function: cubic-bezier(0.91, -0.56, 0.37, 1.65);
+    transition: all 0.5s;
+}
+header .navMobile .navMobilePill .burgerCerrar {
+    position: absolute;
+    top: 5px;
+    animation-timing-function: cubic-bezier(0.91, -0.56, 0.37, 1.65);
+    transition: all 0.5s;
+}
+header .navMobile .ulMobile {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    justify-content: space-around;
+    text-align: center;
+    list-style: none;
+    border-width: 0px 4px 4px 4px;
+    border-style: solid;
+    border-color: #6e61ff;
+    background-color: white;
+    transform: translateY(0px);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.91, -0.56, 0.37, 1.65);
+    transition: all 0.5s;
+    pointer-events: all;
+}
+header .navMobile .ulMobile li {
+    width: 100%;
+    font-family: 'kanit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+header .navMobile .ulMobile li a {
+    color: #494949;
+}
+header .navMobile #navMobileShower {
+    display: none;
+    flex-direction: row-reverse;
+}
+header .navMobile #navMobileShower:checked ~ .ulMobile {
+    height: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    animation-timing-function: cubic-bezier(0.91, -0.56, 0.37, 1.65);
+    transition: all 0.5s;
+}
+header .navMobile #navMobileShower:checked ~ .navMobilePill {
+    border-radius: 16px 16px 16px 16px;
+}
+header .navMobile #navMobileShower:checked ~ .navMobilePill .burgerAbrir {
+    visibility: visible;
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(0.91, -0.56, 0.37, 1.65);
+    transition: all 0.5s;
+}
+header .navMobile #navMobileShower:checked ~ .navMobilePill .burgerCerrar {
+    transform: scale(0);
+    animation-timing-function: cubic-bezier(0.91, -0.56, 0.37, 1.65);
+    transition: all 0.5s;
+}
